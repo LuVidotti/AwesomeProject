@@ -6,6 +6,7 @@ import NovaPesquisa from '../src/pages/NovaPesquisa';
 import Login from '../src/pages/Login';
 import CriarConta from '../src/pages/CriarConta';
 import RecuperacaoSenha from '../src/pages/RecuperacaoSenha';
+import CustomDrawer from '../src/components/CustomDrawer';
 
 
 const Stack = createStackNavigator();
@@ -13,7 +14,20 @@ const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
     return (
-        <Drawer.Navigator>
+        <Drawer.Navigator
+            screenOptions={{
+                headerTitle: "",
+                headerStyle: {
+                    backgroundColor: "#2B1D62"
+                },
+                headerTintColor: "#FFFFFF",
+                drawerActiveTintColor: "#FFFFFF",
+                drawerLabelStyle: {
+                    color: "#FFFFFF"
+                }
+            }}
+            drawerContent={(props) => <CustomDrawer {...props}/>}
+        >
             <Drawer.Screen name='Home' component={Home}/>
         </Drawer.Navigator>
     )
