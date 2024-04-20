@@ -1,9 +1,9 @@
 import { TextInput } from "react-native";
 import estilos from "./estilos";
 
-function Input({ acao, isPassword }) {
+function Input({ acao, isPassword, valor }) {
     return(
-        <TextInput style={estilos.input} secureTextEntry={isPassword} onChangeText={acao}/>
+        <TextInput value={valor} style={estilos.input} secureTextEntry={isPassword} onChangeText={acao}/>
     )
 }
 

@@ -2,7 +2,6 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import Input from "../../components/Input";
 import Icon from "react-native-vector-icons/FontAwesome";
 import estilos from "./estilos";
-import { Button } from "react-native";
 import BotaoPadrao from "../../components/BotaoPadrao";
 
 function NovaPesquisa() {
