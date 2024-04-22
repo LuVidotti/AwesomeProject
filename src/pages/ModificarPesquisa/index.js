@@ -4,12 +4,22 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import estilos from "./estilos";
 import BotaoPadrao from "../../components/BotaoPadrao";
 import { useState } from "react";
+import ModalComponent from "../../components/Modal";
 
 function ModificarPesquisa({ route, navigation }) {
     const { nome, data, imagem } = route.params;
 
+    const [mostrarModal, setMostrarModal] = useState(false);
     const [nomeInput, setNomeInput] = useState(nome);
     const [dataInput, setDataInput] = useState(data);
+
+    function abrirModal() {
+        setMostrarModal(true);
+    }
+
+    function fecharModal() {
+        setMostrarModal(false);
+    }
 
     return (
         <View style={estilos.container}>
@@ -35,11 +45,13 @@ function ModificarPesquisa({ route, navigation }) {
 
             <View style={estilos.acoesContainer}>
                 <BotaoPadrao texto="SALVAR"/>
-                <TouchableOpacity style={estilos.botaoDelete}>
+                <TouchableOpacity style={estilos.botaoDelete} onPress={abrirModal}>
                     <Icon name="trash" style={{color: "#FFFFFF", fontSize: 18}}/>
                     <Text style={{color: "#FFFFFF", fontSize: 18}}>Apagar</Text>
                 </TouchableOpacity>
             </View>
+
+            <ModalComponent mostrarModal={mostrarModal} fecharModal={fecharModal}/>
         </View>
     )
 }
