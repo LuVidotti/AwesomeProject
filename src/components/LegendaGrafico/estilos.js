@@ -2,16 +2,14 @@ import { StyleSheet } from "react-native";
 
 const estilos = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: "#372775",
-    },
-    imagem: {
-        width: 175,
-        height: 175
-    },
-    legendas: {
+        flexDirection: "row",
+        alignItems: "center",
         gap: 5
+    },
+    texto: {
+        color: "#FFFFFF",
+        fontSize: 16
     }
-})
+});
 
 export default estilos;

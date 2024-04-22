@@ -27,7 +27,9 @@ function Opcoes({ route, navigation }) {
                     nome: nome
                 })}
             ><Opcao texto="Coletar dados"><Icon name="checkbox-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
-            <TouchableOpacity><Opcao texto="Relatório"><Icon name="aperture-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Relatório")}
+            ><Opcao texto="Relatório"><Icon name="aperture-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
         </View>
     )
 }

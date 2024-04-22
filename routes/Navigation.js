@@ -11,6 +11,7 @@ import ModificarPesquisa from '../src/pages/ModificarPesquisa';
 import Opcoes from '../src/pages/Opcoes';
 import ColetaDados from '../src/pages/ColetaDados';
 import Agradecimento from '../src/pages/Agradecimento';
+import Relatorio from '../src/pages/Relatorio';
 
 
 const Stack = createStackNavigator();
@@ -61,6 +62,7 @@ function Navigation() {
                 <Stack.Screen name='Opcoes' component={Opcoes}/>
                 <Stack.Screen name='Coleta dados' component={ColetaDados} options={{headerShown: false}}/>
                 <Stack.Screen name='Agradecimento' component={Agradecimento} options={{headerShown: false}}/>
+                <Stack.Screen name='Relatório' component={Relatorio}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
