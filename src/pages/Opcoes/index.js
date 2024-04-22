@@ -15,8 +15,18 @@ function Opcoes({ route, navigation }) {
 
     return(
         <View style={estilos.container}>
-            <TouchableOpacity><Opcao texto="Modificar"><Icon name="create-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
-            <TouchableOpacity><Opcao texto="Coletar dados"><Icon name="checkbox-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Modificar pesquisa", {
+                    nome: nome,
+                    data: data,
+                    imagem: imagem
+                })}
+            ><Opcao texto="Modificar"><Icon name="create-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Coleta dados", {
+                    nome: nome
+                })}
+            ><Opcao texto="Coletar dados"><Icon name="checkbox-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
             <TouchableOpacity><Opcao texto="Relatório"><Icon name="aperture-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
         </View>
     )

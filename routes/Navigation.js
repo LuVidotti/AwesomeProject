@@ -9,6 +9,7 @@ import RecuperacaoSenha from '../src/pages/RecuperacaoSenha';
 import CustomDrawer from '../src/components/CustomDrawer';
 import ModificarPesquisa from '../src/pages/ModificarPesquisa';
 import Opcoes from '../src/pages/Opcoes';
+import ColetaDados from '../src/pages/ColetaDados';
 
 
 const Stack = createStackNavigator();
@@ -57,6 +58,7 @@ function Navigation() {
                 <Stack.Screen name='Recuperação de Senha' component={RecuperacaoSenha}/>
                 <Stack.Screen name="Modificar pesquisa" component={ModificarPesquisa}/>
                 <Stack.Screen name='Opcoes' component={Opcoes}/>
+                <Stack.Screen name='Coleta dados' component={ColetaDados}options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
