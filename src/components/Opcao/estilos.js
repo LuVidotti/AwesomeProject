@@ -12,7 +12,7 @@ const estilos = StyleSheet.create({
     },
     texto: {
         color: "#FFFFFF",
-        fontWeight: "bold"
+        fontFamily: "AveriaLibre_700Bold"
     }
 })
 

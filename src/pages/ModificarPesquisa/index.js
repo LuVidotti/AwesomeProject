@@ -47,7 +47,7 @@ function ModificarPesquisa({ route, navigation }) {
                 <BotaoPadrao texto="SALVAR"/>
                 <TouchableOpacity style={estilos.botaoDelete} onPress={abrirModal}>
                     <Icon name="trash" style={{color: "#FFFFFF", fontSize: 18}}/>
-                    <Text style={{color: "#FFFFFF", fontSize: 18}}>Apagar</Text>
+                    <Text style={{color: "#FFFFFF", fontSize: 18, fontFamily: "AveriaLibre_400Regular"}}>Apagar</Text>
                 </TouchableOpacity>
             </View>
 

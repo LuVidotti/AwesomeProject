@@ -8,7 +8,8 @@ const estilos = StyleSheet.create({
     },
     label: {
         color: "#FFFFFF",
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: "AveriaLibre_400Regular"
     },
     container: {
         flex: 1,

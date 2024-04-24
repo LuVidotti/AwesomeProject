@@ -12,7 +12,7 @@ function CustomDrawer(props) {
             <DrawerItem 
                 label="Sair" 
                 onPress={() => props.navigation.navigate("Login")}
-                labelStyle={{color: "#FFFFFF"}}
+                labelStyle={{color: "#FFFFFF", fontFamily: "AveriaLibre_400Regular"}}
             />
         </DrawerContentScrollView>
     )

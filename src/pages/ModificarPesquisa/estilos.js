@@ -7,7 +7,8 @@ const estilos = StyleSheet.create({
     },
     label: {
         color: "#FFFFFF",
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: "AveriaLibre_400Regular"
     },
     container: {
         flex: 1,
@@ -23,7 +24,8 @@ const estilos = StyleSheet.create({
         backgroundColor: "#FFFFFF",
         padding: 5,
         width: 250,
-        color: "#3F92C5"
+        color: "#3F92C5",
+        fontFamily: "AveriaLibre_400Regular"
     },
     inputImagem: {
         backgroundColor: "#FFFFFF",

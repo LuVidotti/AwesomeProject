@@ -6,7 +6,8 @@ const estilos = StyleSheet.create({
         color: "#3F92C5",
         paddingLeft: 10,
         paddingTop: 5,
-        paddingBottom: 5
+        paddingBottom: 5,
+        fontFamily: "AveriaLibre_400Regular"
     }
 })
 

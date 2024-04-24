@@ -10,8 +10,8 @@ const estilos = StyleSheet.create({
     },
     texto: {
         color: "#FFFFFF",
-        fontWeight: "bold",
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: "AveriaLibre_700Bold"
     },
     container: {
         justifyContent: "center",

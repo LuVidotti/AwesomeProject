@@ -10,7 +10,8 @@ const estilos = StyleSheet.create({
     texto: {
         color: "#FFFFFF",
         fontSize: 20,
-        marginBottom: 30
+        marginBottom: 30,
+        fontFamily: "AveriaLibre_400Regular"
     }
 })
 

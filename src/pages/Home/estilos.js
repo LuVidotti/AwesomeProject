@@ -18,7 +18,8 @@ const estilos = StyleSheet.create({
         padding: 5,
         marginTop: 20,
         marginHorizontal: 10,
-        marginBottom: 20
+        marginBottom: 20,
+        fontFamily: "AveriaLibre_400Regular"
     }
 })
 

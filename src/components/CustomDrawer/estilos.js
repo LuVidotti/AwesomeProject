@@ -14,7 +14,8 @@ const estilos = StyleSheet.create({
     },
     texto: {
         color: "#FFFFFF",
-        fontSize: 15
+        fontSize: 15,
+        fontFamily: "AveriaLibre_700Bold"
     },
     menu: {
         backgroundColor: "#2B1F5C"

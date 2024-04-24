@@ -14,7 +14,8 @@ const estilos = StyleSheet.create({
     titulo: {
         color: "#FFFFFF",
         fontSize: 22,
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: "AveriaLibre_400Regular"
     }
 })
 

@@ -33,7 +33,7 @@ function DrawerNavigator() {
             }}
             drawerContent={(props) => <CustomDrawer {...props}/>}
         >
-            <Drawer.Screen name='Home' component={Home}/>
+            <Drawer.Screen name='Home' component={Home} options={{drawerLabelStyle: {fontFamily: "AveriaLibre_400Regular"}, drawerLabel: "Pesquisas"}}/>
         </Drawer.Navigator>
     )
 }
@@ -49,7 +49,8 @@ function Navigation() {
                     },
                     headerTintColor: "#573FBA",
                     headerTitleStyle: {
-                        color: "#FFFFFF"
+                        color: "#FFFFFF",
+                        fontFamily: "AveriaLibre_700Bold"
                     }
                 }}
             >

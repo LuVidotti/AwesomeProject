@@ -7,11 +7,13 @@ const estilos = StyleSheet.create({
     },
     texto: {
         color: "#3F92C5",
-        fontSize: 18
+        fontSize: 18,
+        fontFamily: "AveriaLibre_400Regular"
     },
     data: {
         color: "#8B8B8B",
-        fontSize: 12
+        fontSize: 12,
+        fontFamily: "AveriaLibre_400Regular"
     },
     card: {
         alignItems: "center",

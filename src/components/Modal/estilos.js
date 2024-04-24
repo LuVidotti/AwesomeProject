@@ -13,7 +13,8 @@ const estilos = StyleSheet.create({
     },
     texto: {
         color: "#FFFFFF",
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: "AveriaLibre_400Regular"
     },
     botoesContainer: {
         flexDirection: "row",
@@ -31,8 +32,8 @@ const estilos = StyleSheet.create({
     },
     textoBotao: {
         color: "#FFFFFF",
-        fontWeight: "bold",
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: "AveriaLibre_700Bold"
     }
 })
 

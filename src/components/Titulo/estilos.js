@@ -4,7 +4,8 @@ const estilos = StyleSheet.create({
     titulo: {
         fontSize: 30,
         fontWeight: "400",
-        color: "#FFFFFF"
+        color: "#FFFFFF",
+        fontFamily: "AveriaLibre_400Regular"
     },
     container: {
         alignItems: "center",

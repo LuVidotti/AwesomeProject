@@ -13,7 +13,8 @@ const estilos = StyleSheet.create({
     },
     label: {
         color: "#FFFFFF",
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: "AveriaLibre_400Regular"
     },
     areaBotoes: {
         marginTop: 60,
@@ -34,7 +35,7 @@ const estilos = StyleSheet.create({
     },
     texto: {
         color: "#FFFFFF",
-        fontWeight: "400"
+        fontFamily: "AveriaLibre_400Regular"
     }
 })
 

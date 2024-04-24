@@ -7,7 +7,8 @@ const estilos = StyleSheet.create({
     },
     texto: {
         color: "#FFFFFF",
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: "AveriaLibre_400Regular"
     }
 })
 
