@@ -4,6 +4,8 @@ import estilos from "./estilos";
 import Input from "../../components/Input";
 import { useState } from "react";
 import MensagemErro from "../../components/MensagemErro";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth_mod } from "../../firebase/config";
 
 function CriarConta({ navigation }) {
     const [email, setEmail] = useState('');
@@ -26,7 +28,12 @@ function CriarConta({ navigation }) {
 
         if(reEmail.test(email)) {
             setMensagemErro('');
-            navigation.navigate("Login");
+            createUserWithEmailAndPassword(auth_mod, email, senha)
+                .then((usuarioCriado) => {
+                    navigation.navigate("Login");
+                }).catch((erro) => {
+                    setMensagemErro("Erro ao criar conta.")
+                })
         } else {
             setMensagemErro("E-mail inválido");
         }

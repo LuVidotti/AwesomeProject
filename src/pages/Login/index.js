@@ -5,6 +5,8 @@ import estilos from "./estilos";
 import BotaoPadrao from "../../components/BotaoPadrao";
 import { useState } from "react";
 import MensagemErro from "../../components/MensagemErro";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth_mod } from "../../firebase/config";
 
 function Login({ navigation }) {
     const [email, setEmail] = useState('');
@@ -21,7 +23,14 @@ function Login({ navigation }) {
 
         if(reEmail.test(email)) {
             setMensagemErro('');
-            navigation.navigate("DrawerNavigator");
+            signInWithEmailAndPassword(auth_mod, email, senha)
+                .then((usuarioLogado) => {
+                    console.log(usuarioLogado);
+                    navigation.navigate("DrawerNavigator");
+                }).catch((erro) => {
+                    console.log(erro);
+                    setMensagemErro("E-mail e/ou senha incorretos.")
+                })
         } else {
             setMensagemErro("E-mail e/ou senha inválidos.");
         }
