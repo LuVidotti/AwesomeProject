@@ -12,6 +12,7 @@ import Opcoes from '../src/pages/Opcoes';
 import ColetaDados from '../src/pages/ColetaDados';
 import Agradecimento from '../src/pages/Agradecimento';
 import Relatorio from '../src/pages/Relatorio';
+import { PesquisaProvider } from "../src/context/PesquisaContext"
 
 
 const Stack = createStackNavigator();
@@ -40,32 +41,35 @@ function DrawerNavigator() {
 
 function Navigation() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName='Login'
-                screenOptions={{
-                    headerStyle: {
-                        backgroundColor: "#2B1D62"
-                    },
-                    headerTintColor: "#573FBA",
-                    headerTitleStyle: {
-                        color: "#FFFFFF",
-                        fontFamily: "AveriaLibre_700Bold"
-                    }
-                }}
-            >
-                <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
-                <Stack.Screen name='DrawerNavigator' component={DrawerNavigator} options={{headerShown: false}}/>
-                <Stack.Screen name='Nova Conta' component={CriarConta}/>
-                <Stack.Screen name='Nova Pesquisa' component={NovaPesquisa}/>
-                <Stack.Screen name='Recuperação de Senha' component={RecuperacaoSenha}/>
-                <Stack.Screen name="Modificar pesquisa" component={ModificarPesquisa}/>
-                <Stack.Screen name='Opcoes' component={Opcoes}/>
-                <Stack.Screen name='Coleta dados' component={ColetaDados} options={{headerShown: false}}/>
-                <Stack.Screen name='Agradecimento' component={Agradecimento} options={{headerShown: false}}/>
-                <Stack.Screen name='Relatório' component={Relatorio}/>
-            </Stack.Navigator>
-        </NavigationContainer>
+        <PesquisaProvider>
+            <NavigationContainer>
+                <Stack.Navigator
+                    initialRouteName='Login'
+                    screenOptions={{
+                        headerStyle: {
+                            backgroundColor: "#2B1D62"
+                        },
+                        headerTintColor: "#573FBA",
+                        headerTitleStyle: {
+                            color: "#FFFFFF",
+                            fontFamily: "AveriaLibre_700Bold"
+                        }
+                    }}
+                >
+                    <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
+                    <Stack.Screen name='DrawerNavigator' component={DrawerNavigator} options={{headerShown: false}}/>
+                    <Stack.Screen name='Nova Conta' component={CriarConta}/>
+                    <Stack.Screen name='Nova Pesquisa' component={NovaPesquisa}/>
+                    <Stack.Screen name='Recuperação de Senha' component={RecuperacaoSenha}/>
+                    <Stack.Screen name="Modificar pesquisa" component={ModificarPesquisa}/>
+                    <Stack.Screen name='Opcoes' component={Opcoes}/>
+                    <Stack.Screen name='Coleta dados' component={ColetaDados} options={{headerShown: false}}/>
+                    <Stack.Screen name='Agradecimento' component={Agradecimento} options={{headerShown: false}}/>
+                    <Stack.Screen name='Relatório' component={Relatorio}/>
+                </Stack.Navigator>
+            </NavigationContainer>
+        </PesquisaProvider>
+        
     )
 }
 

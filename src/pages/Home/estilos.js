@@ -11,7 +11,8 @@ const estilos = StyleSheet.create({
         alignItems: "center",
         gap: 30,
         marginTop: 30,
-        marginBottom: 40
+        marginBottom: 40,
+        flexWrap: "wrap"
     },
     input: {
         backgroundColor: "#FFFFFF",
