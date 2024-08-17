@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import estilos from "./estilos";
 
 function Opcoes({ route, navigation }) {
-    const { nome, data, imagem } = route.params;
+    const { nome, data, imagem, id } = route.params;
 
     useEffect(() => {
         navigation.setOptions({
@@ -19,7 +19,8 @@ function Opcoes({ route, navigation }) {
                 onPress={() => navigation.navigate("Modificar pesquisa", {
                     nome: nome,
                     data: data,
-                    imagem: imagem
+                    imagem: imagem,
+                    id: id
                 })}
             ><Opcao texto="Modificar"><Icon name="create-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
             <TouchableOpacity
