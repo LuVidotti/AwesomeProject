@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { collection, initializeFirestore, addDoc, query, onSnapshot, updateDoc, doc } from "firebase/firestore";
+import { collection, initializeFirestore, addDoc, query, onSnapshot, updateDoc, doc, deleteDoc } from "firebase/firestore";
 import { app } from "../firebase/config";
 
 export const PesquisaContext = createContext();
@@ -17,6 +17,11 @@ export const PesquisaProvider = ({ children }) => {
     const db = initializeFirestore(app, {experimentalForceLongPolling: true});
 
     const pesquisaCollection = collection(db, "pesquisas");
+
+    function deletarPesquisa(id, callback) {
+        deleteDoc(doc(db, "pesquisas", id));
+        callback();
+    }
 
     function modificarPesquisa(id, nome, data) {
         const pesquisaRef = doc(db, "pesquisas", id);
@@ -79,7 +84,8 @@ export const PesquisaProvider = ({ children }) => {
             mensagemErro,
             cadastrar,
             listaPesquisas,
-            modificarPesquisa
+            modificarPesquisa,
+            deletarPesquisa
         }}>{children}</PesquisaContext.Provider>
     )
 }

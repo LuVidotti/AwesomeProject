@@ -53,7 +53,7 @@ function ModificarPesquisa({ route, navigation }) {
                 </TouchableOpacity>
             </View>
 
-            <ModalComponent mostrarModal={mostrarModal} fecharModal={fecharModal}/>
+            <ModalComponent navigation={navigation} id={id} mostrarModal={mostrarModal} fecharModal={fecharModal}/>
         </View>
     )
 }
