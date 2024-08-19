@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { collection, initializeFirestore, addDoc, query, onSnapshot, updateDoc, doc, deleteDoc } from "firebase/firestore";
+import { collection, initializeFirestore, addDoc, query, onSnapshot, updateDoc, doc, deleteDoc, getDoc } from "firebase/firestore";
 import { app } from "../firebase/config";
 
 export const PesquisaContext = createContext();
@@ -12,11 +12,84 @@ export const PesquisaProvider = ({ children }) => {
     const [mensagemSucesso, setMensagemSucesso] = useState("");
     const [mensagemErro, setMensagemErro] = useState("");
     const [listaPesquisas, setListaPesquisas] = useState([]);
+    const [notaPessimo, setNotaPessimo] = useState(0);
+    const [notaRuim, setNotaRuim] = useState(0);
+    const [notaNeutro, setNotaNeutro] = useState(0);
+    const [notaBom, setNotaBom] = useState(0);
+    const [notaExcelente, setNotaExcelente] = useState(0);
     
-
     const db = initializeFirestore(app, {experimentalForceLongPolling: true});
 
     const pesquisaCollection = collection(db, "pesquisas");
+
+    function recuperarPesquisa(id) {
+        const pesquisaRef = doc(db, "pesquisas", id);
+
+        getDoc(pesquisaRef).then((pesquisa) => {
+            setNotaPessimo(pesquisa.data().notaPessimo);
+            setNotaRuim(pesquisa.data().notaRuim);
+            setNotaNeutro(pesquisa.data().notaNeutro);
+            setNotaBom(pesquisa.data().notaBom);
+            setNotaExcelente(pesquisa.data().notaExcelente);
+        }).catch((erro) => {
+            console.log("Erro ao recuperar pesquisa "+erro)
+        })
+    }
+
+    function votarPessimo(id) {
+        const pesquisaRef = doc(db, "pesquisas", id);
+
+        getDoc(pesquisaRef).then((pesquisa) => {
+            const notaAtual = pesquisa.data().notaPessimo;
+            updateDoc(pesquisaRef, {
+                notaPessimo: notaAtual + 1
+            })
+        })
+    }
+
+    function votarRuim(id) {
+        const pesquisaRef = doc(db, "pesquisas", id);
+
+        getDoc(pesquisaRef).then((pesquisa) => {
+            const notaAtual = pesquisa.data().notaRuim;
+            updateDoc(pesquisaRef, {
+                notaRuim: notaAtual + 1
+            })
+        })
+    }
+
+    function votarNeutro(id) {
+        const pesquisaRef = doc(db, "pesquisas", id);
+
+        getDoc(pesquisaRef).then((pesquisa) => {
+            const notaAtual = pesquisa.data().notaNeutro;
+            updateDoc(pesquisaRef, {
+                notaNeutro: notaAtual + 1
+            })
+        })
+    }
+
+    function votarBom(id) {
+        const pesquisaRef = doc(db, "pesquisas", id);
+
+        getDoc(pesquisaRef).then((pesquisa) => {
+            const notaAtual = pesquisa.data().notaBom;
+            updateDoc(pesquisaRef, {
+                notaBom: notaAtual + 1
+            })
+        })
+    }
+
+    function votarExcelente(id) {
+        const pesquisaRef = doc(db, "pesquisas", id);
+
+        getDoc(pesquisaRef).then((pesquisa) => {
+            const notaAtual = pesquisa.data().notaExcelente;
+            updateDoc(pesquisaRef, {
+                notaExcelente: notaAtual + 1
+            })
+        })
+    }
 
     function deletarPesquisa(id, callback) {
         deleteDoc(doc(db, "pesquisas", id));
@@ -57,7 +130,12 @@ export const PesquisaProvider = ({ children }) => {
 
         const docPesquisa = {
             nome: nome,
-            data: data
+            data: data,
+            notaPessimo: 0,
+            notaRuim: 0,
+            notaNeutro: 0,
+            notaBom: 0,
+            notaExcelente: 0
         }
 
         addDoc(pesquisaCollection, docPesquisa).then((pesquisaCriada) => {
@@ -85,7 +163,18 @@ export const PesquisaProvider = ({ children }) => {
             cadastrar,
             listaPesquisas,
             modificarPesquisa,
-            deletarPesquisa
+            deletarPesquisa,
+            votarPessimo,
+            votarRuim,
+            votarNeutro,
+            votarBom,
+            votarExcelente,
+            recuperarPesquisa,
+            notaPessimo,
+            notaRuim,
+            notaNeutro,
+            notaBom,
+            notaExcelente
         }}>{children}</PesquisaContext.Provider>
     )
 }

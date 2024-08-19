@@ -25,11 +25,14 @@ function Opcoes({ route, navigation }) {
             ><Opcao texto="Modificar"><Icon name="create-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate("Coleta dados", {
-                    nome: nome
+                    nome: nome,
+                    id: id
                 })}
             ><Opcao texto="Coletar dados"><Icon name="checkbox-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
             <TouchableOpacity
-                onPress={() => navigation.navigate("Relatório")}
+                onPress={() => navigation.navigate("Relatório", {
+                    id:id
+                })}
             ><Opcao texto="Relatório"><Icon name="aperture-outline" style={{fontSize: 35, color: "#FFFFFF"}}/></Opcao></TouchableOpacity>
         </View>
     )
